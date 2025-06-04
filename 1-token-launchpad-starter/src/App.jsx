@@ -1,19 +1,19 @@
 import "./App.css";
 import { TokenLaunchpad } from "./components/TokenLaunchpad";
 
-// wallet adapter imports
+// wallet adapter imports!
 import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
 import {
   WalletModalProvider,
-  WalletDisconnectButton,
+  WalletDisconnectProvider,
   WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
 import "@solana/wallet-adapter-react-ui/styles.css";
 
-function App() {
+const App = () => {
   return (
     <div>
       <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
@@ -27,14 +27,15 @@ function App() {
               }}
             >
               <WalletMultiButton />
-              <WalletDisconnectButton />
+              <WalletDisconnectProvider />
             </div>
-            <TokenLaunchpad></TokenLaunchpad>;
+
+            <TokenLaunchpad />
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>
     </div>
   );
-}
+};
 
 export default App;
