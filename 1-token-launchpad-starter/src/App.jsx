@@ -8,7 +8,7 @@ import {
 } from "@solana/wallet-adapter-react";
 import {
   WalletModalProvider,
-  WalletDisconnectProvider,
+  WalletDisconnectButton,
   WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
 import "@solana/wallet-adapter-react-ui/styles.css";
@@ -27,10 +27,10 @@ const App = () => {
               }}
             >
               <WalletMultiButton />
-              <WalletDisconnectProvider />
+              <WalletDisconnectButton />
             </div>
 
-            <TokenLaunchpad />
+            <TokenLaunchpad></TokenLaunchpad>
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>
